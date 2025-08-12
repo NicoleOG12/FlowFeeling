@@ -12,7 +12,7 @@ h1 {
 }
 
 .pergunta {
-    margin: 20px;
+    margin: 25px;
     padding: 15px;
     background: #f8ff9b;
     border-radius: 10px;
@@ -20,7 +20,7 @@ h1 {
     transform: translateY(20px);
     animation: fadeUp 0.6s forwards;
     animation-delay: var(--delay);
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.147);
 }
 
 @keyframes fadeUp {
@@ -42,12 +42,12 @@ label {
     font-weight: 700;
 }
 
-button {
+.botao {
     background: #ff4f81;
     color: white;
-    padding: 10px 20px;
+    padding: 30px 50px;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: 16px;
     display: block;
@@ -57,8 +57,8 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background: #ff2a66;
+.botao:hover {
+    background: #ff2a2a;
     transform: scale(1.05);
 }
 
@@ -84,9 +84,6 @@ a {
     font-weight: 700;
 }
 
-img {
-    width: 900px;
-}
 
 .flex {
     display: flex;
@@ -94,7 +91,7 @@ img {
 }
 
 .item1 {
-    margin-top: 19px;
+    margin-top: 39px;
 }
 
 .titulo {
@@ -178,8 +175,8 @@ img {
 }
 
 .button {
-    width: 120px;
-    height: 100px;
+    width: 50px;
+    height: 70px;
     background-color: #ff69b4;
     border: 3px solid gold;
     border-radius: 50%;
@@ -218,13 +215,11 @@ img {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: gold;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
     user-select: none;
 }
