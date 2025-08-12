@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FlowFeeling</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <header class="flex">
+    <div class="item">   
+        <p class="titulo">FlowFeeling</p>
+    </div>
+
+    <div class="item1">
+        <a href="index.html">Home</a>
+        <a href="">Sobre</a>
+        <a href="quiz.html">Quiz</a>
+    </div>
+
+</header>
+
+<h1>🍽 Descubra a Comida do Seu Humor</h1>
+
+<form id="quizForm" novalidate>
+  <button type="submit">Enviar Respostas</button>
+</form>
+
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+  <div class="machine">
+    <button id="closeModal" aria-label="Fechar modal">&times;</button>
+    <div class="lights">
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+    </div>
+    <div class="screen" id="screen">
+      <img src="./img/interrogação.png" id="slotImage" alt="Imagem do caça-níquel" draggable="false" />
+    </div>
+    <div class="buttons">
+      <div class="button"></div>
+      <div class="button"></div>
+      <div class="button"></div>
+    </div>
+    <div class="lever" id="lever" title="Puxe a alavanca para girar"></div>
+  </div>
+</div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
