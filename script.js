@@ -150,6 +150,7 @@ const imagensComidas = {
   "Monstruosa": "./img/monstruosa.jpg"
 };
 
+
 const quizForm = document.getElementById("quizForm");
 const modal = document.getElementById("modal");
 const slotImage = document.getElementById("slotImage");
@@ -159,6 +160,7 @@ const closeModal = document.getElementById("closeModal");
 let intervaloAnimacao = null;
 let comidaEscolhida = "";
 let tipoHumor = "";
+let imagemRevelada = false;
 
 perguntas.forEach((p,i) => {
   let div = document.createElement("div");
@@ -170,31 +172,45 @@ perguntas.forEach((p,i) => {
 });
 
 function iniciarAnimacao() {
-  const imgsAnimacao = [
-    "./img/interrogação.png",
-    "./img/interrogação.png",
-    "./img/interrogação.png",
-    "./img/interrogação.png"
-  ];
+  const listaComidas = comidas[tipoHumor] || [];
   let contador = 0;
+
+  if (listaComidas.length === 0) return;
+
   intervaloAnimacao = setInterval(() => {
-    slotImage.src = imgsAnimacao[contador % imgsAnimacao.length];
+    const comidaAtual = listaComidas[contador % listaComidas.length];
+    slotImage.src = imagensComidas[comidaAtual] || "./img/interrogação.png";
+    slotImage.alt = comidaAtual;
     contador++;
-  }, 100);
+  }, 80);
 }
+
+lever.addEventListener("click", () => {
+  if (intervaloAnimacao || imagemRevelada || !comidaEscolhida) return;
+
+  iniciarAnimacao();
+
+  setTimeout(() => {
+    clearInterval(intervaloAnimacao);
+    intervaloAnimacao = null;
+    slotImage.src = imagensComidas[comidaEscolhida] || "./img/interrogação.png";
+    slotImage.alt = comidaEscolhida;
+    imagemRevelada = true;
+  }, 2000);
+});
 
 quizForm.addEventListener("submit", e => {
   e.preventDefault();
 
   let pontuacao = {};
   let dados = new FormData(quizForm);
-  for(let [, humor] of dados.entries()) {
+  for (let [, humor] of dados.entries()) {
     pontuacao[humor] = (pontuacao[humor] || 0) + 1;
   }
-  tipoHumor = Object.keys(pontuacao).reduce((a,b) => pontuacao[a] > pontuacao[b] ? a : b);
+  tipoHumor = Object.keys(pontuacao).reduce((a, b) => pontuacao[a] > pontuacao[b] ? a : b);
 
   const listaComidas = comidas[tipoHumor];
-  if(!listaComidas || listaComidas.length === 0) {
+  if (!listaComidas || listaComidas.length === 0) {
     alert("Ops! Não encontramos comidas para o seu humor.");
     return;
   }
@@ -204,31 +220,13 @@ quizForm.addEventListener("submit", e => {
   slotImage.src = "./img/interrogação.png";
   slotImage.alt = "Interrogação";
 
-  iniciarAnimacao();
-
-  setTimeout(() => {
-    clearInterval(intervaloAnimacao);
-    slotImage.src = imagensComidas[comidaEscolhida] || "./img/interrogação.png";
-    slotImage.alt = comidaEscolhida;
-  }, 2000);
+  imagemRevelada = false;
 });
 
 closeModal.addEventListener("click", () => {
   modal.classList.remove("active");
   clearInterval(intervaloAnimacao);
-});
-
-lever.addEventListener("click", () => {
-  if(intervaloAnimacao) return;
-
-  slotImage.src = "./img/interrogação.png";
-  slotImage.alt = "Interrogação";
-
-  iniciarAnimacao();
-
-  setTimeout(() => {
-    clearInterval(intervaloAnimacao);
-    slotImage.src = imagensComidas[comidaEscolhida] || "./img/interrogação.png";
-    slotImage.alt = comidaEscolhida;
-  }, 2000);
+  intervaloAnimacao = null;
+  imagemRevelada = false;
+  comidaEscolhida = "";
 });
