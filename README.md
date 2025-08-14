@@ -1,4 +1,4 @@
-# 🎯 FlowFeeling🎰
+#  💛💙FlowFeeling💙💛
 
 Este projeto é um quiz interativo que avalia o humor do usuário por meio de perguntas e, com base nas respostas, sugere uma comida que combina com seu estado de espírito.
 ---
