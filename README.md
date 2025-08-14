@@ -1,31 +1,43 @@
-#  💛💙FlowFeeling💙💛
+<h1 align="center">💛💙 FlowFeeling 💙💛</h1>
 
-Este projeto é um quiz interativo que avalia o humor do usuário por meio de perguntas e, com base nas respostas, sugere uma comida que combina com seu estado de espírito.
----
+<p align="center">
+  <em>Um quiz interativo que avalia o humor do usuário e sugere comidas que combinam com seu estado de espírito!</em>
+</p>
 
-## 🧑‍🤝‍🧑 Time de Desenvolvimento
+<hr>
 
-| Nome    | GitHub                                      |
-|---------|---------------------------------------------|
-| Nicole  | [NicoleOG12](https://github.com/NicoleOG12) |
-| Julia   | [linsjulia](https://github.com/linsjulia)   |
+## 💙 Sobre o Projeto
+<p>
+ Projeto desenvolvido por <strong>Nicole</strong> e <strong>Julia</strong> como parte de uma dinâmica de desenvolvimento tipo “Sharktem”.<br>
+  O professor <a href="https://github.com/bzsantos" target="_blank"><strong>Bruno</strong></a> nos desafiou a criar algo que desse diagnóstico em apenas 2 horas, podendo ser feito em qualquer linguagem.<br>
+  Este foi o resultado: um quiz interativo que sugere comidas baseadas no humor do usuário!<br><br>
+</p>
 
----
+<hr>
+
+## 👩‍💻 Time de Desenvolvimento
+
+- <a href="https://github.com/NicoleOG12" target="_blank">Nicole Oliveira Gonçalves</a>  
+- <a href="https://github.com/linsjulia" target="_blank">Júlia Lins Pereira da Silva</a>  
+
+<hr>
 
 ## 📚 Tecnologias Utilizadas
 
-- HTML5  
-- CSS3 
-- JavaScript 
+- 💻 HTML5  
+- 🎨 CSS3  
+- ⚡ JavaScript  
 
----
+<hr>
 
-## 🚀 Como usar
+## 🚀 Como Usar
 
-1. Responda às perguntas do quiz.  
-2. Clique em "Enviar Respostas".  
-3. Veja o resultado no modal com a animação do caça-níquel.  
+1. 📝 Responda às perguntas do quiz.  
+2. 🎯 Clique em "Enviar Respostas".  
+3. 🎰 Veja o resultado no modal com a animação do caça-níquel.  
 
----
+<hr>
 
-✨ Projeto desenvolvido com carinho por Nicole e Julia.
+<p align="center">
+✨ Divirta-se e descubra qual comida combina com o seu humor! 🎉
+</p>
