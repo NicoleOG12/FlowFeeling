@@ -151,82 +151,107 @@ const imagensComidas = {
 };
 
 
-const quizForm = document.getElementById("quizForm");
-const modal = document.getElementById("modal");
-const slotImage = document.getElementById("slotImage");
-const lever = document.getElementById("lever");
-const closeModal = document.getElementById("closeModal");
+// elementos da página
+const quizForm = document.getElementById("quizForm"); // formulário do quiz
+const modal = document.getElementById("modal"); // modal que mostra a comida
+const slotImage = document.getElementById("slotImage"); // imagem do slot de comida
+const lever = document.getElementById("lever"); // botão da alavanca 
+const closeModal = document.getElementById("closeModal"); // botão para fechar o modal
 
-let intervaloAnimacao = null;
-let comidaEscolhida = "";
-let tipoHumor = "";
-let imagemRevelada = false;
+// variáveis de controle
+let intervaloAnimacao = null; // guarda o id do setinterval da animação (executa um código repetidamente, com um intervalo de tempo)
+let comidaEscolhida = ""; // guardará a comida escolhida aleatoriamente
+let tipoHumor = ""; // guardará o humor predominante do usuário
+let imagemRevelada = false; // indica se a comida já foi revelada
 
-perguntas.forEach((p,i) => {
-  let div = document.createElement("div");
-  div.classList.add("pergunta");
-  div.innerHTML = `<h3>${i+1}. ${p.texto}</h3>` + p.opcoes.map(op =>
-    `<label><input type="radio" name="q${i}" value="${op.humor}" required> ${op.texto}</label>`
-  ).join("");
+// criar perguntas no formulário dinamicamente
+for (let i = 0; i < perguntas.length; i++) {
+  const p = perguntas[i]; // pega a pergunta atual
+  const div = document.createElement("div"); // cria uma div para a pergunta
+  div.classList.add("pergunta"); // adiciona a classe pergunta para estilização
+
+  let html = "<h3>" + (i + 1) + ". " + p.texto + "</h3>"; // cabeçalho da pergunta com número
+  for (let j = 0; j < p.opcoes.length; j++) {
+    const op = p.opcoes[j]; // pega cada opção da pergunta
+    html += '<label><input type="radio" name="q' + i + '" value="' + op.humor + '" required> ' + op.texto + '</label>';
+    // adiciona o input com valor do humor e o texto da opção
+  }
+  div.innerHTML = html; // coloca o html dentro da div
   quizForm.insertBefore(div, quizForm.querySelector('button[type="submit"]'));
-});
-
-function iniciarAnimacao() {
-  const listaComidas = comidas[tipoHumor] || [];
-  let contador = 0;
-
-  if (listaComidas.length === 0) return;
-
-  intervaloAnimacao = setInterval(() => {
-    const comidaAtual = listaComidas[contador % listaComidas.length];
-    slotImage.src = imagensComidas[comidaAtual] || "./img/interrogação.png";
-    slotImage.alt = comidaAtual;
-    contador++;
-  }, 80);
+  // insere a pergunta antes do botão enviar no formulário
 }
 
-lever.addEventListener("click", () => {
+// função para animar o caça-niquel de comidas
+function iniciarAnimacao() {
+  const listaComidas = comidas[tipoHumor]; // lista de comidas do humor predominante
+  if (!listaComidas || listaComidas.length === 0) return; // se não houver comidas, sai
+
+  let contador = 0; // contador para percorrer as comidas
+  intervaloAnimacao = setInterval(function() {
+    const comidaAtual = listaComidas[contador % listaComidas.length]; // pega a comida atual do ciclo
+    slotImage.src = imagensComidas[comidaAtual] || "./img/interrogação.png"; // atualiza a imagem
+    slotImage.alt = comidaAtual; // atualiza o alt da imagem
+    contador++; // passa para a próxima comida
+  }, 80); // muda a cada 80ms
+}
+
+// evento do clique na alavanca
+lever.addEventListener("click", function() {
   if (intervaloAnimacao || imagemRevelada || !comidaEscolhida) return;
+  // se já está animando ou imagem já foi revelada ou não tem comida, não faz nada
+  iniciarAnimacao(); // inicia a animação
 
-  iniciarAnimacao();
-
-  setTimeout(() => {
-    clearInterval(intervaloAnimacao);
-    intervaloAnimacao = null;
-    slotImage.src = imagensComidas[comidaEscolhida] || "./img/interrogação.png";
-    slotImage.alt = comidaEscolhida;
-    imagemRevelada = true;
+  setTimeout(function() { // após 2 segundos, para a animação
+    clearInterval(intervaloAnimacao); // para o setinterval
+    intervaloAnimacao = null; // reseta a variável
+    slotImage.src = imagensComidas[comidaEscolhida] || "./img/interrogação.png"; // mostra a comida final
+    slotImage.alt = comidaEscolhida; // atualiza o alt
+    imagemRevelada = true; // marca que a comida foi revelada
   }, 2000);
 });
 
-quizForm.addEventListener("submit", e => {
-  e.preventDefault();
+// evento de envio do formulário
+quizForm.addEventListener("submit", function(e) {
+  e.preventDefault(); // evita que a página recarregue ao enviar
 
-  let pontuacao = {};
-  let dados = new FormData(quizForm);
-  for (let [, humor] of dados.entries()) {
-    pontuacao[humor] = (pontuacao[humor] || 0) + 1;
+  const pontuacao = {}; // objeto para contar os votos de cada humor
+  const dados = new FormData(quizForm); // pega todos os dados do formulário
+
+  for (let par of dados.entries()) { // para cada resposta do formulário
+    const humor = par[1]; // valor selecionado (humor)
+    pontuacao[humor] = (pontuacao[humor] || 0) + 1; // conta quantas vezes cada humor foi selecionado
   }
-  tipoHumor = Object.keys(pontuacao).reduce((a, b) => pontuacao[a] > pontuacao[b] ? a : b);
 
-  const listaComidas = comidas[tipoHumor];
+  tipoHumor = ""; // reseta o humor predominante
+  let maior = 0; // guarda a maior contagem
+  for (let h in pontuacao) { // percorre todos os humores
+    if (pontuacao[h] > maior) { // se a contagem for maior que a atual
+      maior = pontuacao[h]; // atualiza a maior contagem
+      tipoHumor = h; // atualiza o humor predominante
+    }
+  }
+
+  const listaComidas = comidas[tipoHumor]; // pega a lista de comidas do humor predominante
   if (!listaComidas || listaComidas.length === 0) {
-    alert("Ops! Não encontramos comidas para o seu humor.");
+    alert("ops! não encontramos comidas para o seu humor."); // se não houver comidas, alerta
     return;
   }
+
+  // escolhe uma comida aleatória da lista
   comidaEscolhida = listaComidas[Math.floor(Math.random() * listaComidas.length)];
 
-  modal.classList.add("active");
-  slotImage.src = "./img/interrogação.png";
-  slotImage.alt = "Interrogação";
-
-  imagemRevelada = false;
+  // abrir modal
+  modal.classList.add("active"); // mostra o modal
+  slotImage.src = "./img/interrogação.png"; // coloca a imagem de interrogação antes de girar
+  slotImage.alt = "interrogação";
+  imagemRevelada = false; // marca que a comida ainda não foi revelada
 });
 
-closeModal.addEventListener("click", () => {
-  modal.classList.remove("active");
-  clearInterval(intervaloAnimacao);
-  intervaloAnimacao = null;
-  imagemRevelada = false;
-  comidaEscolhida = "";
+// evento de fechar modal
+closeModal.addEventListener("click", function() {
+  modal.classList.remove("active"); // esconde o modal
+  clearInterval(intervaloAnimacao); // para qualquer animação que ainda esteja rodando
+  intervaloAnimacao = null; // reseta a variável
+  imagemRevelada = false; // marca que nenhuma comida está revelada
+  comidaEscolhida = ""; // reseta a comida escolhida
 });
