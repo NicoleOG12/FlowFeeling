@@ -17,8 +17,9 @@
 
 ## 👩‍💻 Time de Desenvolvimento
 
-- <a href="https://github.com/NicoleOG12" target="_blank">Nicole Oliveira Gonçalves</a>  
-- <a href="https://github.com/linsjulia" target="_blank">Júlia Lins Pereira da Silva</a>  
+- <a href="https://github.com/IsahApoli" target="_blank">Isabella Apolinário dos Santos</a>  
+- <a href="https://github.com/linsjulia" target="_blank">Júlia Lins Pereira da Silva</a> 
+- <a href="https://github.com/NicoleOG12" target="_blank">Nicole Oliveira Gonçalves</a>   
 
 <hr>
 
