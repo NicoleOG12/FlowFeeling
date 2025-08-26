@@ -8,7 +8,7 @@
 
 ## 💙 Sobre o Projeto
 <p>
- Projeto desenvolvido por <strong>Isabella</strong> <strong>Júlia</strong> <strong>Nicole</strong> e como parte de uma dinâmica de desenvolvimento tipo “Sharktem”.<br>
+ Projeto desenvolvido por <strong>Isabella,</strong> <strong>Júlia,</strong> e <strong>Nicole</strong> como parte de uma dinâmica de desenvolvimento tipo “Sharktem”.<br>
   O professor <a href="https://github.com/bzsantos" target="_blank"><strong>Bruno</strong></a> nos desafiou a criar algo que desse diagnóstico em apenas 2 horas, podendo ser feito em qualquer linguagem.<br>
   Este foi o resultado: um quiz interativo que sugere comidas baseadas no humor do usuário!<br><br>
 </p>
