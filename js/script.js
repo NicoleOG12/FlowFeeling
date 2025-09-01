@@ -110,25 +110,41 @@ btnBack.addEventListener("click", () => {
 
 // ==================== Função de animação ====================
 function iniciarAnimacao() {
-  const listaComidas = comidas[saborEscolhido]?.[temperaturaEscolhida]?.[tipoHumor] || [];
+  let listaComidas = comidas[saborEscolhido]?.[temperaturaEscolhida]?.[tipoHumor] || [];
+  
+  // Filtra só comidas que tenham imagem definida para evitar mostrar interrogação na animação
+  listaComidas = listaComidas.filter(comida => imagensComidas[comida]);
+
   if (!listaComidas.length) return;
 
+  // Mostra imagem de interrogação antes da animação começar
+  slotImage.src = "./img/interrogação.png";
+  slotImage.alt = "Interrogação";
+
   let contador = 0;
-  intervaloAnimacao = setInterval(() => {
-    const comidaAtual = listaComidas[contador % listaComidas.length];
-    slotImage.src = imagensComidas[comidaAtual] || "./img/interrogação.png";
-    slotImage.alt = comidaAtual;
-    contador++;
-  }, 80);
+
+  // Pequeno delay antes de iniciar a animação (opcional)
+  setTimeout(() => {
+    intervaloAnimacao = setInterval(() => {
+      const comidaAtual = listaComidas[contador % listaComidas.length];
+      slotImage.src = imagensComidas[comidaAtual];
+      slotImage.alt = comidaAtual;
+      contador++;
+    }, 80);
+  }, 200);
 }
 
 // ==================== Evento alavanca ====================
 lever.addEventListener("click", () => {
   if (intervaloAnimacao || imagemRevelada || !comidaEscolhida) return;
+
   iniciarAnimacao();
+
   setTimeout(() => {
     clearInterval(intervaloAnimacao);
     intervaloAnimacao = null;
+
+    // Revela a comida sorteada
     slotImage.src = imagensComidas[comidaEscolhida] || "./img/interrogação.png";
     slotImage.alt = comidaEscolhida;
     imagemRevelada = true;
