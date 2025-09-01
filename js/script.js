@@ -156,7 +156,7 @@ quizForm.addEventListener("submit", e => {
   temperaturaEscolhida = "";
 
   for (let [name, value] of dados.entries()) {
-    if (["doce","salgado","ácido","picante"].includes(value)) saborEscolhido = value;
+    if (["doce","salgado","ácido","gorduroso"].includes(value)) saborEscolhido = value;
     else if (["quente","frio","ambiente"].includes(value)) temperaturaEscolhida = value;
     else pontuacao[value] = (pontuacao[value] || 0) + 1;
   }

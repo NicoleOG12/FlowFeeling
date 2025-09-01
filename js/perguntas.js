@@ -21,7 +21,7 @@ const perguntas = [
       { texto: "🍫 Doce", sabor: "doce" }, 
       { texto: "🍟 Salgado", sabor: "salgado" }, 
       { texto: "🍋 Ácido", sabor: "ácido" }, 
-      { texto: "🌶 Picante", sabor: "picante" } 
+      { texto: "🍔 Gorduroso", sabor: "gorduroso" } 
   ]},
   { texto: "Prefere algo:", opcoes: [
       { texto: "🔥 Quente", temperatura: "quente" }, 

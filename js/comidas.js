@@ -19,6 +19,7 @@ const comidas = {
       estressado: ["Bolo simples", "Torta de limão", "Brigadeiro", "Pudim"]
     }
   },
+  
   salgado: {
     quente: {
       feliz: ["Pizza de calabresa", "Hambúrguer artesanal", "Lasanha de frango", "Escondidinho de carne", "Coxinha"],
@@ -39,6 +40,7 @@ const comidas = {
       estressado: ["Caldo verde", "Macarrão simples", "Salada Caesar", "Escondidinho"]
     }
   },
+
   ácido: {
     quente: {
       feliz: ["Torta de limão quente", "Açaí com mel quente", "Bolo de limão", "Cheesecake aquecido"],
@@ -59,24 +61,25 @@ const comidas = {
       estressado: ["Caldo verde", "Torta de limão", "Bolo simples", "Chocolate quente"]
     }
   },
-  picante: {
+
+  gorduroso: {
     quente: {
-      feliz: ["Pizza picante", "Hambúrguer com pimenta", "Lasanha apimentada", "Chili com carne"],
-      tranquilo: ["Macarrão com molho suave", "Wrap com pimenta leve", "Salada Caesar", "Purê com tempero suave"],
-      cansado: ["Macarrão picante", "Caldo apimentado", "Pizza simples", "Hambúrguer simples"],
-      estressado: ["Caldo verde picante", "Macarrão apimentado", "Purê com tempero forte", "Salada Caesar"]
+      feliz: ["Pizza quatro queijos", "Hambúrguer com bacon", "Lasanha à bolonhesa", "Batata frita com cheddar"],
+      tranquilo: ["Macarrão à carbonara", "Panqueca recheada", "Omelete com queijo", "Arroz cremoso"],
+      cansado: ["Macarrão com manteiga", "Sopa cremosa de queijo", "Pizza simples com queijo", "Hambúrguer simples"],
+      estressado: ["Purê com carne moída", "Lasanha cremosa", "Macarrão com molho branco", "Batata gratinada"]
     },
     frio: {
-      feliz: ["Salgado picante", "Salsicha apimentada", "Brigadeiro com pimenta", "Sorvete chili-chocolate"],
-      tranquilo: ["Salada Caesar", "Salada caprese", "Wrap com pimenta leve", "Sopa de legumes"],
-      cansado: ["Caldo verde picante", "Chocolate quente apimentado", "Macarrão picante", "Purê com tempero leve"],
-      estressado: ["Caldo verde", "Chocolate quente com pimenta", "Torta de limão picante", "Bolo de cenoura com pimenta"]
+      feliz: ["Empada de frango", "Croissant com queijo", "Pizza simples com queijo", "Pão de queijo"],
+      tranquilo: ["Omelete com queijo", "Bolinho de arroz", "Hambúrguer simples", "Arroz cremoso"],
+      cansado: ["Macarrão com manteiga", "Sopa cremosa de queijo", "Panqueca recheada", "Croissant com queijo"],
+      estressado: ["Bolo de chocolate com cobertura", "Batata gratinada", "Purê com carne moída", "Macarrão com molho branco"]
     },
     ambiente: {
-      feliz: ["Brigadeiro com pimenta", "Bolo de cenoura com pimenta", "Monstruosa picante", "Torta de limão com pimenta"],
-      tranquilo: ["Wrap com pimenta leve", "Salada Caesar", "Salada caprese", "Macarrão alho e óleo"],
-      cansado: ["Macarrão carbonara", "Caldo verde", "Purê com frango", "Sopa de legumes"],
-      estressado: ["Caldo verde", "Chocolate quente com pimenta", "Torta de limão", "Bolo de cenoura com chocolate"]
+      feliz: ["Pizza quatro queijos", "Lasanha à bolonhesa", "Bolo de chocolate com cobertura", "Empada de frango"],
+      tranquilo: ["Misto quente", "Pão de queijo", "Bolinho de arroz", "Arroz cremoso"],
+      cansado: ["Hambúrguer simples", "Omelete com queijo", "Panqueca recheada", "Macarrão com manteiga"],
+      estressado: ["Lasanha cremosa", "Batata frita com cheddar", "Macarrão à carbonara", "Croissant com queijo"]
     }
   }
 };
@@ -153,23 +156,27 @@ const imagensComidas = {
   "Mousse ácido": "./img/mousseacido.jpg",
   "Chocolate gelado": "./img/chocolategelado.jpg",
 
-  // Picantes
-  "Pizza picante": "./img/pizzaapimentada.jpg",
-  "Hambúrguer com pimenta": "./img/hamburguerpimenta.jpg",
-  "Lasanha apimentada": "./img/lasanhaapimentada.jpg",
-  "Chili com carne": "./img/chili.jpg",
-  "Macarrão com molho suave": "./img/macarraosuave.jpg",
-  "Wrap com pimenta leve": "./img/wrappimentaleve.jpg",
-  "Purê com tempero suave": "./img/puresuave.jpg",
-  "Macarrão picante": "./img/macarraopicante.jpg",
-  "Caldo apimentado": "./img/caldopicante.jpg",
-  "Caldo verde picante": "./img/caldopverdpicante.jpg",
-  "Purê com tempero forte": "./img/pureforte.jpg",
-  "Salgado picante": "./img/salgadopicante.jpg",
-  "Salsicha apimentada": "./img/salsichapicante.jpg",
-  "Brigadeiro com pimenta": "./img/brigadeiropicante.jpg",
-  "Sorvete chili-chocolate": "./img/sorvetechili.jpg",
-  "Monstruosa picante": "./img/monstruosapicante.jpg",
-  "Torta de limão com pimenta": "./img/tortadelimaopicante.jpg",
-  "Bolo de cenoura com pimenta": "./img/bolopicante.jpg"
+  // Gorduroso
+  "Pizza quatro queijos": "./img/pizzaquatroqueijos.jpg",
+  "Hambúrguer com bacon": "./img/hamburguerbacon.jpg",
+  "Lasanha à bolonhesa": "./img/lasanhabolonhesa.jpg",
+  "Batata frita com cheddar": "./img/batatachedar.jpg",
+  "Macarrão à carbonara": "./img/macarraocarbonara.jpg",
+  "Panqueca recheada": "./img/panquecarecheada.jpg",
+  "Omelete com queijo": "./img/omeletequeijo.jpg",
+  "Arroz cremoso": "./img/arrozcremoso.jpg",
+  "Macarrão com manteiga": "./img/macarraomanteiga.jpg",
+  "Sopa cremosa de queijo": "./img/sopaqueijo.jpg",
+  "Pizza simples com queijo": "./img/pizzasimples.jpg",
+  "Hambúrguer simples": "./img/hamburguersimples.jpg",
+  "Purê com carne moída": "./img/purecarne.jpg",
+  "Lasanha cremosa": "./img/lasanhacremosa.jpg",
+  "Macarrão com molho branco": "./img/macarraomolhobranco.jpg",
+  "Batata gratinada": "./img/batatagratinada.jpg",
+  "Empada de frango": "./img/empadafrango.jpg",
+  "Croissant com queijo": "./img/croissantqueijo.jpg",
+  "Pão de queijo": "./img/paodequeijo.jpg",
+  "Bolinho de arroz": "./img/bolinhoarroz.jpg",
+  "Bolo de chocolate com cobertura": "./img/bolochocolate.jpg",
+  "Misto quente": "./img/mistoquente.jpg"
 };
