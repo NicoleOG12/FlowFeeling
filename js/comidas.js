@@ -10,7 +10,7 @@ const comidas = {
       feliz: ["Sorvete de creme com morango", "Cheesecake de morango", "Picolé de frutas", "Monstruosa gelada", "Açaí com granola"],
       tranquilo: ["Gelatina de frutas", "Salada de frutas com iogurte", "Pudim gelado", "Mousse de chocolate", "Bombom gelado"],
       cansado: ["Sorvete de chocolate", "Milkshake de baunilha", "Iogurte gelado com frutas", "Gelado de creme", "Cupcake gelado"],
-      estressado: ["Torta gelada de limão", "Sorvete de frutas vermelhas", "Cheesecake gelado", "Mousse de chocolate"]
+      estressado: ["Sorvete de limão", "Sorvete de frutas vermelhas", "Cheesecake gelado", "Mousse de chocolate"]
     },
     ambiente: {
       feliz: ["Bolo de cenoura com chocolate", "Brigadeiro", "Cupcake de baunilha", "Brownie", "Bombom"],
@@ -50,7 +50,7 @@ const comidas = {
       feliz: ["Cheesecake de limão gelado", "Sorvete de frutas cítricas", "Picolé de limão", "Mousse de maracujá", "Açaí gelado"],
       tranquilo: ["Salada cítrica", "Sopa fria de legumes", "Wrap com limão", "Salada caprese gelada"],
       cansado: ["Chocolate gelado com frutas", "Sorvete de limão", "Mousse gelado", "Macarrão frio com limão"],
-      estressado: ["Torta gelada de limão", "Sorvete de frutas vermelhas", "Cheesecake gelado", "Mousse ácido"]
+      estressado: ["Sorvete de limão", "Sorvete de frutas vermelhas", "Cheesecake gelado", "Mousse ácido"]
     },
     ambiente: {
       feliz: ["Torta de limão", "Cheesecake de limão", "Bolo de limão", "Mousse de maracujá"],
@@ -61,7 +61,7 @@ const comidas = {
   },
   picante: {
     quente: {
-      feliz: ["Pizza quatro queijos picante", "Hambúrguer com pimenta", "Lasanha apimentada", "Chili com carne"],
+      feliz: ["Pizza picante", "Hambúrguer com pimenta", "Lasanha apimentada", "Chili com carne"],
       tranquilo: ["Macarrão com molho suave", "Wrap com pimenta leve", "Salada Caesar", "Purê com tempero suave"],
       cansado: ["Macarrão picante", "Caldo apimentado", "Pizza simples", "Hambúrguer simples"],
       estressado: ["Caldo verde picante", "Macarrão apimentado", "Purê com tempero forte", "Salada Caesar"]
@@ -139,22 +139,22 @@ const imagensComidas = {
   "Bolo de limão": "./img/bolodelimao.jpg",
   "Cheesecake aquecido": "./img/cheesecake.jpg",
   "Salada com vinagrete suave": "./img/saladavinagrete.jpg",
-  "Wrap cítrico": "./img/wrapcitrico.jpg",
+  "Wrap cítrico": "./img/wrap.jpg",
   "Macarrão com limão": "./img/macarraolimão.jpg",
   "Caldo verde cítrico": "./img/caldoverde.jpg",
   "Chocolate quente com limão": "./img/chocolatequente2.jpg",
-  "Torta gelada de limão": "./img/tortadelimaogelada.jpg",
-  "Sorvete de frutas cítricas": "./img/sorvetecitricas.jpg",
+  "Sorvete de limão": "./img/sorvetelimao.jpg",
+  "Sorvete de frutas cítricas": "./img/sorvetecitrico.jpg",
   "Picolé de limão": "./img/picolelimao.jpg",
   "Mousse de maracujá": "./img/moussemaracuja.jpg",
   "Salada cítrica": "./img/saladacitrica.jpg",
-  "Sopa fria de legumes": "./img/sopafriale.jpg",
+  "Sopa fria de legumes": "./img/sopalegumes.jpg",
   "Wrap com limão": "./img/wrapcomlimao.jpg",
   "Mousse ácido": "./img/mousseacido.jpg",
   "Chocolate gelado": "./img/chocolategelado.jpg",
 
   // Picantes
-  "Pizza quatro queijos picante": "./img/pizzaquatroqueijosp.jpg",
+  "Pizza picante": "./img/pizzaapimentada.jpg",
   "Hambúrguer com pimenta": "./img/hamburguerpimenta.jpg",
   "Lasanha apimentada": "./img/lasanhaapimentada.jpg",
   "Chili com carne": "./img/chili.jpg",
